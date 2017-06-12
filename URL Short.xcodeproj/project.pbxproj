@@ -193,6 +193,7 @@
 				TargetAttributes = {
 					DAFCA6311EEE2E710070C6B6 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = F4C4286R8Q;
 						ProvisioningStyle = Automatic;
 					};
 					DAFCA6451EEE2E710070C6B6 = {
@@ -414,6 +415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F4C4286R8Q;
 				INFOPLIST_FILE = "URL Short/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.thatnerdjack.URL-Short";
@@ -426,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F4C4286R8Q;
 				INFOPLIST_FILE = "URL Short/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.thatnerdjack.URL-Short";
