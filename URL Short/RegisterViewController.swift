@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterViewController: UIViewController {
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var pass: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,15 +25,24 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func hitRegister(_ sender: Any) {
+        Auth.auth().createUser(withEmail: email.text!, password: pass.text!) { (user, error) in
+            if let error = error {
+                //ADD ERROR CODE
+                print(error.localizedDescription)
+            } else {
+                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                changeRequest?.displayName = self.name.text!
+                changeRequest?.commitChanges { (error) in
+                    if let error = error {
+                        //ADD ERROR ALERT CODE
+                        print(error.localizedDescription)
+                    } else {
+                        self.performSegue(withIdentifier: "registerToDashboard", sender: sender)
+                    }
+                }
+            }
+        }
     }
-    */
 
 }

@@ -40,13 +40,26 @@ class ViewController: UIViewController {
     
     @IBAction func UILoginHit(_ sender: Any) {
         Auth.auth().signIn(withEmail: email.text!, password: pass.text!) { (user, error) in
-            //code
+            if let error = error {
+                //ADD ERROR ALERT CODE
+                print(error.localizedDescription)
+            } else {
+                self.performSegue(withIdentifier: "loginToDash", sender: sender)
+            }
         }
     }
     @IBAction func UIRegisterHIt(_ sender: Any) {
-        //code
+        performSegue(withIdentifier: "loginToReigster", sender: sender)
     }
     
+    @IBAction func devLogin(_ sender: Any) {
+        Auth.auth().signIn(withEmail: "jackjyro@gmail.com", password: "123456") { (user, error) in
+            if let error = error {
+                //ADD ERROR ALERT CODE
+                print(error.localizedDescription)
+            } else {
+                self.performSegue(withIdentifier: "loginToDash", sender: sender)
+            }
+        }
+    }
 }
-
-//finished on signing in existing users, making view controllers, and starting registration
